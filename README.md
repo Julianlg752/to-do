@@ -30,6 +30,12 @@ Esto creará y ejecutará los contenedores de Docker para el frontend (React) y 
 
 Abre tu navegador web y visita [http://localhost:3000](http://localhost:3000) para acceder a la aplicación de gestión de tareas.
 
+5. Usuario de Pruebas
+En el login usa este usuario de pruebas para ingresar al dashboard
+```
+usuario: admin
+contraseña: admin_to_do
+```
 ## Uso
 
 Una vez que la aplicación esté en funcionamiento, podrás realizar las siguientes acciones:
