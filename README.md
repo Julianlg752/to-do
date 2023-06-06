@@ -17,8 +17,11 @@ git clone git@github.com:Julianlg752/to-do.git
 ```sh
 cd to-do
 ```
-
-3. Construye y ejecuta los contenedores de Docker:
+3. Compila el frontend
+```sh
+cd frontend && npm run build
+```
+4. Construye y ejecuta los contenedores de Docker:
 
 ```sh
 docker-compose up -d
