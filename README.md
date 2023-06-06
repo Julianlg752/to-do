@@ -45,6 +45,12 @@ Una vez que la aplicación esté en funcionamiento, podrás realizar las siguien
 - **Eliminar una tarea**: Para eliminar una tarea, haz clic en el botón "Eliminar" junto a la tarea que deseas eliminar. La tarea se eliminará de la lista.
 - **Marcar una tarea como completada**: Cada tarea tiene un checkbox que puedes marcar para indicar que la tarea está completada. Esta acción se actualizará en el backend.
 
+## Backend en Golang y arquitectura hexagonal
+
+El backend de esta aplicación está desarrollado en Golang y sigue una arquitectura hexagonal. Esto significa que se ha separado la lógica de negocio del resto de la aplicación, lo que permite una mayor modularidad, reutilización y testabilidad del código.
+
+Un TO-DO del proyecto es incluir pruebas unitarias y de integración.
+
 ## Contribuir
 
 Si deseas contribuir a este proyecto, puedes seguir estos pasos:
