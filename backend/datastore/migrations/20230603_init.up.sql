@@ -1,4 +1,12 @@
 START TRANSACTION;
+CREATE DATABASE IF NOT EXISTS to_do;
+
+
+CREATE USER 'user_to_do'@'%' IDENTIFIED BY 'H2023.06.06S';
+GRANT ALL PRIVILEGES ON *.* TO 'user_to_do'@'%';
+FLUSH PRIVILEGES;
+
+
 CREATE TABLE IF NOT EXISTS users(
     id int auto_increment PRIMARY KEY,
     username VARCHAR(255),

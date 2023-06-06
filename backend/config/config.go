@@ -50,5 +50,5 @@ func TestConnection() {
 	config.DBName = "todo"
 	config.DBPassword = "todo.123"
 	config.DBPort = "3306"
-	config.DBUser = "latadigital"
+	config.DBUser = "user_to_do"
 }
