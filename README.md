@@ -49,7 +49,9 @@ Una vez que la aplicación esté en funcionamiento, podrás realizar las siguien
 
 El backend de esta aplicación está desarrollado en Golang y sigue una arquitectura hexagonal. Esto significa que se ha separado la lógica de negocio del resto de la aplicación, lo que permite una mayor modularidad, reutilización y testabilidad del código.
 
-Un TO-DO del proyecto es incluir pruebas unitarias y de integración.
+## To-Do
+- Pruebas Unitarias
+- Implementacion Paginación
 
 ## Contribuir
 
