@@ -21,7 +21,7 @@ cd to-do
 3. Construye y ejecuta los contenedores de Docker:
 
 ```sh
-docket-compose up -d
+docker-compose up -d
 ```
 
 Esto creará y ejecutará los contenedores de Docker para el frontend (React) y el backend (Golang).
