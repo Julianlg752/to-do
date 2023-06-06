@@ -24,7 +24,7 @@ cd frontend && npm run build
 4. Construye y ejecuta los contenedores de Docker:
 
 ```sh
-docker-compose up -d
+cd .. && docker-compose up -d
 ```
 
 Esto creará y ejecutará los contenedores de Docker para el frontend (React) y el backend (Golang).
