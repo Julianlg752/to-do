@@ -133,7 +133,7 @@ const DashboardPage = () => {
       <div className={styles.taskList}>
         <h2 className={styles.subtitle}>Tareas</h2>
         <ul>
-          {tasks.map((task) => (
+          {tasks && tasks.map((task) => (
             <li key={task.id} className={styles.taskItem}>
               <input
                 type="checkbox"

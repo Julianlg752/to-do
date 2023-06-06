@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0.31
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=mydb
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - API_URL=http://backend:8080
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: on-failure
+    depends_on:
+      - db
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=to_do
+      - DB_HOST=db
+      - DB_PORT=3306
+      - MIGRATE=true
+      - SECRET=SomethingSaltyHere.
+      - USERPASSWORD=admin_to_do
+    ports:
+      - 8080:8080
