@@ -26,7 +26,6 @@ var UserRepository ports.UserRepositoryInterface = &userRepository{
 func (u *userRepository) GetUserInfo(loginRequest *models.LoginRequest) (*models.UserInfo, error) {
 	var userInfo models.UserInfo
 	ok, err := u.db.From(u.userTable).Where(
-		u.userTable.Col("password").Eq(loginRequest.Password),
 		u.userTable.Col("username").Eq(loginRequest.User),
 	).ScanStruct(&userInfo)
 	if !ok {

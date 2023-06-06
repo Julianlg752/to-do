@@ -9,6 +9,7 @@ import (
 
 	"github.com/ansel1/merry/v2"
 	"github.com/dgrijalva/jwt-go"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type Login struct {
@@ -26,6 +27,10 @@ func (c *Login) Login(loginRequest *models.LoginRequest) (*models.LoginResponse,
 	userInfo, err := c.userRepository.GetUserInfo(loginRequest)
 	if err != nil {
 		return nil, merry.Wrap(err)
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(userInfo.Password), []byte(loginRequest.Password)); err != nil {
+		return nil, merry.New("Invalid Password")
 	}
 	token, err := c.generateToken(userInfo)
 	if err != nil {

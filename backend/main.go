@@ -7,12 +7,15 @@ import (
 	"time"
 	"todo/config"
 	"todo/controller"
+	"todo/core/models"
 	"todo/datastore"
 	"todo/router"
 
+	"github.com/doug-martin/goqu/v9"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func main() {
@@ -29,7 +32,7 @@ func main() {
 	}
 
 	TestDatabase()
-
+	CreateDemoUsers()
 	r := gin.Default()
 	r.HandleMethodNotAllowed = true
 	r.Use(cors.New(
@@ -68,5 +71,19 @@ func TestDatabase() {
 	}
 	if val != 1 {
 		panic("query error")
+	}
+}
+
+func CreateDemoUsers() {
+	password, err := bcrypt.GenerateFromPassword([]byte(config.C().UserPassword), bcrypt.MinCost)
+	if err != nil {
+		panic(err)
+	}
+	user := &models.UserInfo{
+		UserName: "admin",
+		Password: string(password),
+	}
+	if _, err := datastore.GoquDB.Insert(goqu.T("users")).Rows(user).Executor().Exec(); err != nil {
+		panic(err)
 	}
 }

@@ -10,13 +10,14 @@ import (
 var config Config
 
 type Config struct {
-	DBHost     string `env:"DB_HOST"`
-	DBPort     string `env:"DB_PORT,default=3306"`
-	DBUser     string `env:"DB_USER,required"`
-	DBPassword string `env:"DB_PASSWORD,required"`
-	DBName     string `env:"DB_NAME,required"`
-	Migrate    bool   `env:"MIGRATE,default=false"`
-	Secret     string `env:"SECRET,required"`
+	DBHost       string `env:"DB_HOST"`
+	DBPort       string `env:"DB_PORT,default=3306"`
+	DBUser       string `env:"DB_USER,required"`
+	DBPassword   string `env:"DB_PASSWORD,required"`
+	DBName       string `env:"DB_NAME,required"`
+	Migrate      bool   `env:"MIGRATE,default=false"`
+	Secret       string `env:"SECRET,required"`
+	UserPassword string `env:"USERPASSWORD,required"`
 }
 
 func Dns() string {
