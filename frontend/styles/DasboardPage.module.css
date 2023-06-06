@@ -1,0 +1,98 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.taskList {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.taskItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.taskItem input[type='checkbox'] {
+  margin-right: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+.taskTitle {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.taskDescription {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.taskActions {
+  margin-left: auto;
+}
+
+.deleteButton,
+.updateButton {
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #ff4d4d;
+}
+
+.updateButton {
+  background-color: #329af0;
+}
+
+.newTask {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.newTaskInput,
+.newTaskTextArea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.addButton {
+  background-color: #3fc65f;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
